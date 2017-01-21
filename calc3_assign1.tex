@@ -1,0 +1,150 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[letterpaper, portrait, margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\graphicspath{ {C:\Users\leedw\Desktop\Latex} }
+
+\begin{document}
+\fontsize{4mm}{4.8mm}\selectfont
+\lhead{ Math 202 T01\\ University of Victoria\\}
+\chead{ Assignment 1\\ }
+\rhead{ Alex L. Deweert \\ V00855767 \\}
+\vspace*{.25\baselineskip} 
+
+
+
+\begin{enumerate}
+
+\item Decompose the vector $\boldsymbol{u}$ into $ \boldsymbol{u_\parallel} + \boldsymbol{u_\bot}$\\\\
+We calculate $\boldsymbol{u_\parallel}$ with the formula $proj_{\boldsymbol{w}} \boldsymbol{u} = \boldsymbol{u_\parallel}$ and the result is a direction vector which is parallel to $\boldsymbol{w}$
+\begin{flalign}
+proj_{\boldsymbol{w}} \boldsymbol{u} &= \frac{ {\boldsymbol{u}}\cdot{\boldsymbol{w}} }{ {\boldsymbol{w}}\cdot{\boldsymbol{w}} } {\boldsymbol{w}} &&\\\nonumber 
+& = \frac{\langle4,10,-8\rangle\cdot\langle2,-4,-6\rangle}{\langle2,-4,-6\rangle\cdot\langle2,-4,-6\rangle}\langle2,-4,-6\rangle \\\nonumber
+&= \frac{8-40+48}{4+16+36}\langle2,-4,-6\rangle\\\nonumber
+&= \frac{16}{56}\langle2,-4,-6\rangle\\\nonumber
+\therefore \boldsymbol{u_\parallel} &= \langle\frac{4}{7},-\frac{8}{7},-\frac{12}{7}\rangle
+\end{flalign}
+
+We take $\boldsymbol{u_\parallel}$ and use it to compute $\boldsymbol{u_\bot}$ since $\boldsymbol{u_\bot} = \boldsymbol{u} - \boldsymbol{u_\parallel}$.
+\begin{flalign}
+perp_{\boldsymbol{w}} \boldsymbol{u} = \boldsymbol{u_\bot} &= \boldsymbol{u} - \boldsymbol{u_\parallel}&&\\\nonumber
+&= \langle4,10,-8\rangle - \langle\frac{4}{7},-\frac{8}{7},-\frac{12}{7}\rangle\\\nonumber
+\therefore \boldsymbol{u_\bot} &= \langle\frac{24}{7},\frac{78}{7},-\frac{44}{7}\rangle
+\end{flalign}
+
+We check that $\boldsymbol{u}$ does indeed equal $ \boldsymbol{u_\parallel} + \boldsymbol{u_\bot}$
+\begin{flalign}\nonumber
+\langle\frac{4}{7},-\frac{8}{7},-\frac{12}{7}\rangle + \langle\frac{24}{7},\frac{78}{7},-\frac{44}{7}\rangle = \langle\frac{28}{7},\frac{70}{7},-\frac{-56}{7}\rangle = \langle4,10,-8\rangle&&
+\end{flalign}
+
+\item Find the volume of the parallelepiped with adjacent edges $PQ$, $PR$, and $PS$\\
+
+We can determine the vectors between the points $PQ$, $PR$, and $PS$ by calculating\\ $q-p$, $r-p$, and $s-p$ which define the vectors along those edges.
+\begin{flalign}\nonumber
+\vec{a} = q-p = \langle1,-1,2\rangle&&
+\vec{b} = r-p = \langle3,0,6\rangle&&
+\vec{c} = s-p = \langle2,-2,-3\rangle&&
+\end{flalign}
+
+We calculate the triple scalar product using the formula (or equivalently):
+\begin{flalign}
+ |(\vec{b}\times\vec{c})\cdot\vec{a}| \equiv det(a,b,c)
+\end{flalign}
+\begin{flalign}\nonumber
+\begin{bmatrix}
+3 & 0 & 6 \\
+2 & -2 & -3 \\
+1 & -1 & 2 \\
+\end{bmatrix}
+&= (3)[(-2)(2)-(-3)(-1)] + (6)[(2)(-1)-(-2)(1)]&&\\\nonumber
+&= (3)[(-4)-3] + (6)[(-2)+(2)]\\\nonumber
+&= -21\\\nonumber
+&\therefore \text{the volume of the parallelepiped is $|-21|$ = 21}
+\end{flalign}
+
+\item Find the area of the triangle formed in the first octant by plane $6x+3y+4z=12$\\\\
+The first octant only contains portions of a plane such that $x$, $y$, and $z$ are positive. A triangular plane is formed in this octant. We can determine where this plane intersects the $x$, $y$, and $z$ axes by setting two of three components to zero.
+\begin{flalign}
+(z,y)=0\nonumber \Rightarrow x = 2&&\\\nonumber
+(x,z)=0\nonumber \Rightarrow y = 4&&\\\nonumber
+(x,y)=0\nonumber \Rightarrow z = 3&&\nonumber
+\end{flalign}
+We now have the co-ordinate points for the intersection points along each axis, and label them $P(2,0,0)$, $Q(0,0,3)$, and $R(0,4,0)$. We determine two vectors which form the edges of this triangle; although three vectors exist, only two are needed.
+\begin{flalign}\nonumber
+\vec{PQ} &= p-q&&\\\nonumber
+&= \langle-2,0,3\rangle
+\end{flalign}
+\begin{flalign}\nonumber
+\vec{RQ} &= r-q&&\\\nonumber
+&= \langle0,4,-3\rangle
+\end{flalign} 
+
+We calculate the area of the triangle using using the formula:
+\begin{flalign}
+ \frac{|(\vec{PQ}\times\vec{RQ})|}{2}
+\end{flalign}
+\begin{flalign}\nonumber
+\begin{bmatrix}
+i & j & k \\
+-2 & 0 & 3 \\
+0 & 4 & -3 \\
+\end{bmatrix}
+&= i(-12)-j(6)+k(-8)&&\\\nonumber
+&= \langle-12-6-8\rangle\\\nonumber
+&\Rightarrow |\langle-12-6-8\rangle|\nonumber = \sqrt{144+36+64}\\\nonumber
+&= \sqrt{244}\\\nonumber
+&= \frac{2\sqrt{61}}{2}\\\nonumber 
+&= \sqrt{61} \text{ the area of the triangle }
+\end{flalign}
+
+\item Find the parametric equations for the line of intersection of the planes $x+y+z=5$ and $3x-y=4$.\\\\
+First we find a vector parallel to the line of intersection of the two planes by using cross product. The resulting line is also a vector that is orthogonal to the normals of both planes.
+\begin{flalign}\nonumber
+n_1 \times n_2 &= \langle1,1,1\rangle\times\langle3,-1,0\rangle&&\\\nonumber
+&=i + 3j - 4k
+\end{flalign}
+We now find a point on this vector; we take any common point along the line of intersection. To do this we set $x=0$ and solve for $y$ and $z$ using both planar equations with back substitution.
+\begin{flalign}\nonumber
+y + z &= 5&&\\\nonumber
+z &= 5 - y\\\nonumber
+-y &= 4\\\nonumber
+y &= -4 \therefore z = 5 - (-4) = 9\nonumber
+\end{flalign}
+We have that $x = 0$, $y = -4$, and $z = 9$ and a point in common between the two planes, $(0,-4,9)$. The parameterized line of intersection is $$x = t \qquad y = -4+3t \qquad z=9-4t$$
+
+\item Find the equation of the plane that contains two lines $L_1$ and $L_2$\\\\
+We can find the equation of a plane using a point on that plane, $P_0$ and its normal $n = Ai + Bj + Ck$. Using this information, we use the component equation
+\begin{flalign}
+A(x-x_0) + B(y - y_0) + C(z-z_0) = 0
+\end{flalign}
+First we find the normal vector. We're given that the lines $L_1$ and $L_2$ in parameterized form and are able to determine that they are in fact parallel since their direction vectors $\langle2,3,-5\rangle$ and  $\langle4,6,-10\rangle$ are scalar multiples of each other. We cannot use these lines to determine the normal since they're parallel; the cross product will be zero. Instead, we use the parameterized $L_1$ and $L_2$ to determine a point on each line and the vector between them. This new line will not be parallel to either of the given lines, and so can be used to determine the normal. Using points $P(2,-4,2)$ and $Q(3,-4,5)$:
+\begin{flalign}\nonumber
+\vec{PQ}&= q-p &&\\\nonumber
+&=\langle1,0,3\rangle
+\end{flalign}
+Then we find the cross product of $\vec{PQ}\times\langle2,3,-5\rangle$ for the normal vector, $n$
+\begin{flalign}\nonumber
+\vec{n}&= q-p &&\\\nonumber
+&=\langle1,0,3\rangle\times\langle2,3,-5\rangle\\\nonumber
+&= \begin{bmatrix}
+i & j & k \\
+1 & 0 & 3 \\
+2 & 3 & -5 \\
+\end{bmatrix}\\\nonumber
+&=-9i+11j+3k\\\nonumber
+\therefore \vec{n}&= \langle-9,11,3\rangle
+\end{flalign}
+
+We now use the point $(2,-4,2)$ and the normal $\langle-9,11,3\rangle$ in the component equation to determine the equation for the plane, $A(x-x_0) + B(y - y_0) + C(z-z_0) = 0 $
+\begin{flalign}\nonumber
+-9(x-2) + 11(y-(-4) + 3(z-3) &= 0 \\\nonumber
+-9x+18 + 11y + 44 + 3z - 9&= 0\\\nonumber
+-9x+11y+3z = -53
+\end{flalign}
+
+\end{enumerate}
+\end{document}
